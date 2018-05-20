@@ -14,7 +14,7 @@ import argparse
 """
     Define global variables.
 """
-SEQUENCE_LENGTH = len(choice)
+SEQUENCE_LENGTH = 40
 SEQUENCE_STEP = 3
 PATH_TO_CORPUS = "corpus.txt"
 EPOCHS = 50
