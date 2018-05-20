@@ -28,8 +28,9 @@ Now just run the following in CMD:
 This will just print the lyrics with some default sentence in it.
 If you want to give it your own sentence, then open the ****main.py**** program and in the last:
     
-    Give your sentence in main()
+    Give your sentence in:
+    sentence = "Your first line of lyric here"
     
  That's it.
  
- Please do STAR this Repo if you think it helped you.
+ Please do ****STAR**** this Repo if you think it helped you.
