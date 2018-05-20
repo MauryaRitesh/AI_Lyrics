@@ -55,37 +55,35 @@ model = load_model("model.h5")  # you can skip training by loading the trained w
     Pick a random sequence and make the network continue
 """
 
-def main(sentence):
-    for diversity in [0.2, 0.5, 1.0, 1.2]:
-        print()
-        print('Diversity:', diversity)
+for diversity in [0.2, 0.5, 1.0, 1.2]:
+    print()
+    print('Diversity:', diversity)
 
-        generated = ''
-        
-        sentence = sentence.lower()
-        generated += sentence
+    generated = ''
+    
+    sentence = "My name is Ritesh and I love Programming"
 
-        print('Generating with seed: "' + sentence + '"')
-        sys.stdout.write(generated)
+    sentence = sentence.lower()
+    generated += sentence
 
-        for i in range(500):
-            x = np.zeros((1, SEQUENCE_LENGTH, len(chars)))
-            for t, char in enumerate(sentence):
-                x[0, t, char_to_index[char]] = 1.
+    print('Generating with seed: "' + sentence + '"')
+    sys.stdout.write(generated)
 
-            predictions = model.predict(x, verbose=0)[0]
-            next_index = helper.sample(predictions, diversity)
-            next_char = indices_char[next_index]
+    for i in range(500):
+        x = np.zeros((1, SEQUENCE_LENGTH, len(chars)))
+        for t, char in enumerate(sentence):
+            x[0, t, char_to_index[char]] = 1.
 
-            generated += next_char
-            sentence = sentence[1:] + next_char
+        predictions = model.predict(x, verbose=0)[0]
+        next_index = helper.sample(predictions, diversity)
+        next_char = indices_char[next_index]
 
-            sys.stdout.write(next_char)
-            sys.stdout.flush()
-        print()
+        generated += next_char
+        sentence = sentence[1:] + next_char
+
+        sys.stdout.write(next_char)
+        sys.stdout.flush()
+    print()
 
 
-if __name__ == "__main__":
-    # insert your 40-chars long string. Please note that it needs to be exactly 40 chars!
-    main("My name is Ritesh and I love Programming")
 
