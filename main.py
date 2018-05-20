@@ -1,5 +1,6 @@
 """
     Inspired by https://github.com/fchollet/keras/blob/master/examples/lstm_text_generation.py
+    CREATED BY RITESH. Not to be distributed without credits.
 """
 
 from __future__ import print_function
@@ -42,12 +43,13 @@ X, y = helper.vectorize(sequences, SEQUENCE_LENGTH, chars, char_to_index, next_c
 """
 model = helper.build_model(SEQUENCE_LENGTH, chars)
 
-"""
-    Train the model
-"""
 
+#    If you want to Train the model, uncomment this line.
 # model.fit(X, y, batch_size=128, nb_epoch=EPOCHS)
-model = load_model("final.h5")  # you can skip training by loading the trained weights
+
+
+#   If you want to test and see demo of the model, keep this line uncommented.
+model = load_model("model.h5")  # you can skip training by loading the trained weights
 
 """
     Pick a random sequence and make the network continue
@@ -56,11 +58,10 @@ model = load_model("final.h5")  # you can skip training by loading the trained w
 def main(sentence):
     for diversity in [0.2, 0.5, 1.0, 1.2]:
         print()
-        print('----- diversity:', diversity)
+        print('Diversity:', diversity)
 
         generated = ''
-        # insert your 40-chars long string. OBS it needs to be exactly 40 chars!
-        sentence = "The grass is green and my car is red lik"
+        
         sentence = sentence.lower()
         generated += sentence
 
@@ -85,8 +86,6 @@ def main(sentence):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='AI Lyrics generator with Deep Learning')
-    parser.add_argument('-s', '--sentence', default='The grass is green and my car is red lik', type=str, help='Main Sentence on which lyrics to be genrated(Must be 40 characaters long.)')
-    args = parser.parse_args()
-    main(args.sentence)
+    # insert your 40-chars long string. Please note that it needs to be exactly 40 chars!
+    main("My name is Ritesh and I love Programming")
 
