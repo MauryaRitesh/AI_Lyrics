@@ -17,7 +17,7 @@ import argparse
 SEQUENCE_LENGTH = 40
 SEQUENCE_STEP = 3
 PATH_TO_CORPUS = "corpus.txt"
-EPOCHS = 50
+EPOCHS = 25
 DIVERSITY = 1.0
 
 """
@@ -61,7 +61,7 @@ for diversity in [0.2, 0.5, 1.0, 1.2]:
 
     generated = ''
     
-    sentence = "My name is Ritesh and I love Programming"
+    sentence = "I will wash away your pain with my tears"
 
     sentence = sentence.lower()
     generated += sentence
