@@ -1,7 +1,5 @@
 """
-
     Utils functions for LSTM network.
-
 """
 
 from keras.models import Sequential, load_model
