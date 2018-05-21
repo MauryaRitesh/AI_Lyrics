@@ -5,6 +5,10 @@
 Of course we can. Isn't that sounds Amazing!!!
 So, let's get started and discuss this topic in detail in [this video](https://www.youtube.com/RiteshKumarMaurya).
 
+****Computer Requirements****
+Your PC or Laptop must have GPU(Graphics Processing Unit) and the minimum RAM should be 8GB, 16GB or more would be fine.
+My laptop has 8GBs of RAM and no GPU except a dedicated Intel Graphics Card. That's why it crashed and I had to reboot it on the first run.
+The Training process would take a lot of time. So, keep patience!
 
 ****IDEA****
 
@@ -14,13 +18,13 @@ For this purpose, I'm using a Keras based RNN, i.e., Recurrent Neural Network wi
 
 ****Coding the Network****
 
-We are using Keras with Tensorflow as backened. Keras kets us to create and solve our problems in a object oriented way.
-So, there are basically two dependencies for this repo, which can e installed in CMD by typing:
+We are using Keras with Tensorflow as backened. Keras lets us to create and solve our problems in an object oriented way.
+So, there are basically two dependencies for this repo, which can be installed in CMD by typing:
 
     pip install keras
     pip install tensorflow
 
-That's it.
+We are done to proceed further!
 Now just run the following in CMD:
     
     python main.py
